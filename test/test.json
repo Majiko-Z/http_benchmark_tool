@@ -1,0 +1,12 @@
+[
+  {
+    "method": "POST",
+    "url": "http://example.com/api",
+    "headers": [
+      ["Content-Type", "application/json"],
+      ["Authorization", "Bearer token"]
+    ],
+    "body": "{\"key\":\"value\"}"
+  }
+
+]
