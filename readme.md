@@ -54,25 +54,25 @@ http_file需要是json文件，这种json文件很容易通过脚本生成
     "query": [
         {
             "method": "POST",
-            "url": "http://0.0.0.0:9998/task",
+            "url": "http://0.0.0.0:9999/create_acc",
             "headers": [
                 [
                     "Content-Type",
                     "application/json"
                 ]
             ],
-            "body": "{\"accountType\": \"1\"}"
+            "body": "{\"accountType\": \"114\"}"
         },
         {
             "method": "POST",
-            "url": "http://0.0.0.0:9998/task",
+            "url": "http://0.0.0.0:9999/create_acc",
             "headers": [
                 [
                     "Content-Type",
                     "application/json"
                 ]
             ],
-            "body": "{\"accountType\": \"1\"}"
+            "body": "{\"accountType\": \"514\"}"
         },
     ]
 }
