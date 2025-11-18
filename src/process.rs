@@ -72,12 +72,7 @@ pub async fn multi_process_request() -> (Vec<u64>, u64) {
     let send_segment = total_num / process_num;
     let expire_secs = *EXPIRE_TIME_SEC.get().expect("EXPIRE_TIME_SEC is not set");
 
-    let client = ClientBuilder::new()
-        .http2_adaptive_window(true) // Enable adaptive window for HTTP/2
-        .pool_max_idle_per_host(500) // Allow up to 500 idle connections per host
-        .timeout(Duration::from_secs(expire_secs as u64)) // 连接超时时间
-        .build()
-        .expect("Failed to build client");
+
 
     let mut handles = vec![];
 
@@ -85,7 +80,13 @@ pub async fn multi_process_request() -> (Vec<u64>, u64) {
     let failed_cnt = Arc::new(Mutex::new(0));
 
     for i in 0..process_num {
-        let client_clone = client.clone();
+        let client = ClientBuilder::new()
+            .http2_adaptive_window(true) // Enable adaptive window for HTTP/2
+            .pool_max_idle_per_host(500) // Allow up to 500 idle connections per host
+            .timeout(Duration::from_secs(expire_secs as u64)) // 连接超时时间
+            .build()
+            .expect("Failed to build client");
+        let client_clone = client;
         let begin_idx = i * send_segment;
         let end_idx = (i + 1) * send_segment;
         let success_cost_clone = Arc::clone(&success_cost);
