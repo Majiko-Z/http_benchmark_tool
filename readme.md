@@ -23,7 +23,7 @@ windows下
 1. 安装zig,并配置环境变量· https://ziglang.org/download/
 2. cargo install zig-build
 3. 使用Chocolatey或者Scoop安装openssl库, 例如`choco install openssl --version 1.1.1.2100`
-4. 安装perl,openssl编译需要 `https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_53631_64bit/strawberry-perl-5.36.3.1-64bit.msi`
+4. 安装perl,openssl编译需要
 4. `rustup target add x86_64-unknown-linux-musl`
 5. windows编译需要安装perl,但OpenSSL 的 Configure 脚本是为 Unix-like 系统 编写的,使用很麻烦, 在git bash下执行命令编译
 
