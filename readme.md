@@ -10,13 +10,15 @@ Jmeter支持,但需要JAVA SDK环境, 内网存在新机器, 或者不联网机�
 
 ## 编译
 
-项目用到openssl相关，可能需要下载openssl相关库，并设置OpenSSL相关库，这里以mac为为例。
+项目用到openssl相关，可能需要下载openssl相关库，并设置OpenSSL相关库，以mac为为例:
 
-`brew install openssl`
-`rustup target add x86_64-unknown-linux-musl`
+1. `brew install openssl`
+2. `rustup target add x86_64-unknown-linux-musl`
 
 
-windows下需要做的
+
+
+windows下
 
 1. 安装zig,并配置环境变量· https://ziglang.org/download/
 2. cargo install zig-build
